@@ -49,3 +49,10 @@ python manage.py createsuperuser
 
 # Start development server
 python manage.py runserver
+
+
+
+🧑‍💻 Author
+Hassan Buruhani
+Learning Django the professional way.
+Feel free to follow or contribute!
