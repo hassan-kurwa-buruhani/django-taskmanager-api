@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth import get_user_model
 from django.utils import timezone
 
 
@@ -19,6 +20,14 @@ class BaseModel(models.Model):
 
     class Meta:
         abstract = True
+
+# profile model
+class Profile(BaseModel):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    bio = models.TextField(null=True, blank=True)
+    profile_pic = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
+    location = models.CharField(max_length=255, null=True, blank=True)
+    
 
 
 # 📌 Tag for categorizing tasks
